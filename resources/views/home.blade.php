@@ -1,7 +1,45 @@
 @extends('layouts.app')
 @section('content')
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        @if (Route::currentRouteName() === 'posts.index' || Route::currentRouteName() === 'posts.search')
+            <div class="row justify-content-center">
+                <form class="d-inline-block" action="{{ route('posts.search') }}" method="get">
+                    {{-- @csrf --}}
+                    <div class="input-group mb-2">
+                        <input id="keyword" type="text" class="form-control @error('keyword') is-invalid @enderror"
+                            name="keyword" value="{{ old('keyword') }}" required autocomplete="keyword"
+                            placeholder="Search keyword here...">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-search" viewBox="0 0 16 16">
+                                    <path
+                                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    @if ($errors->has('keyword'))
+                        <span class="invalid-feedback mb-3" style="display: block;" role="alert">
+                            <strong>{{ $errors->first('keyword') }}</strong>
+                        </span>
+                    @endif
+                    <div class="input-group mb-2">
+                        <select name="searchBy" class="custom-select @error('searchBy') is-invalid @enderror" id="searchBy">
+                            <option selected value="">Choose search criteria...</option>
+                            <option value="1">Search by author name</option>
+                            <option value="2">Search by content fragment</option>
+                        </select>
+                    </div>
+                    @if ($errors->has('searchBy'))
+                        <span class="invalid-feedback" style="display: block;" role="alert">
+                            <strong>{{ $errors->first('searchBy') }}</strong>
+                        </span>
+                    @endif
+                </form>
+            </div>
+        @endif
+        <div class="row justify-content-center mt-4">
             <div class="col">
                 <div class="card">
                     <div class="card-header">{{ __('Posts') }}
@@ -49,7 +87,7 @@
                                                     </form>
                                                 @endif
                                             </div>
-                                            <img class="card-img-top" src={{ $post->image }} alt="Post image">
+                                            <img class="card-img-top" src={{ asset($post->image) }} alt="Post image">
                                             <div class="card-body">
                                                 {{ $post->content }}
                                                 <div>

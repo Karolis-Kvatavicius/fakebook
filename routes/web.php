@@ -27,5 +27,7 @@ Route::post('/like/{user}/{post}', [LikeController::class, 'add'])->name('like')
 Route::get('/my-posts', [PostController::class, 'showUserPosts'])->name('my-posts');
 Route::get('/{post}/comments', [CommentController::class, 'index'])->name('comments');
 Route::post('/{post}/comment/store', [CommentController::class, 'store'])->name('comment.store');
+Route::get('/posts/search', [PostController::class, 'search'])->name('posts.search');
+// Route::get('/posts/results', [PostController::class, 'results'])->name('posts.results');
 
 Route::resource('posts', PostController::class);
