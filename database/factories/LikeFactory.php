@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Post;
+use App\Models\Like;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class PostFactory extends Factory
+class LikeFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Post::class;
+    protected $model = Like::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => rand(1, 10),
-            'content' => $this->faker->text(),
-            'image' => 'storage/posts-images/post.png',
+            'user_id' => $this->faker->randomDigit() + 1,
+            'post_id' => $this->faker->unique()->randomDigit() + 1,
         ];
     }
 }

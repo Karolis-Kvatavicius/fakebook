@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -21,9 +23,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [
-    App\Http\Controllers\HomeController::class,
-    'index',
-])->name('home');
+Route::post('/like/{user}/{post}', [LikeController::class, 'add'])->name('like');
+Route::get('/my-posts', [PostController::class, 'showUserPosts'])->name('my-posts');
+Route::get('/{post}/comments', [CommentController::class, 'index'])->name('comments');
+Route::post('/{post}/comment/store', [CommentController::class, 'store'])->name('comment.store');
 
 Route::resource('posts', PostController::class);

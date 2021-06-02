@@ -18,7 +18,6 @@ class CreatePostsTable extends Migration
             $table->foreignId('user_id')->constrained();
             $table->text('content');
             $table->text('image')->nullable();
-            $table->bigInteger('likes');
             $table->timestamps();
         });
     }

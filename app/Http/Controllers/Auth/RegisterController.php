@@ -32,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = RouteServiceProvider::HOME;
 
     /**
      * Create a new controller instance.
@@ -45,14 +45,14 @@ class RegisterController extends Controller
     }
 
     /**
-     * Get a validator for an incoming registration request.
+     * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
+     * @return \App\Models\User
      */
-    protected function validator(array $data)
+    protected function register(Request $request)
     {
-        return Validator::make($data, [
+        $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => [
                 'required',
@@ -62,19 +62,9 @@ class RegisterController extends Controller
                 'unique:users',
             ],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'image' => 'required|image|max:1999',
+            'profile_picture' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-    }
 
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\Models\User
-     */
-    protected function register(Request $request)
-    {
-        // dd($request);
         $filenameWithExt = $request
             ->file('profile_picture')
             ->getClientOriginalName();
@@ -99,6 +89,6 @@ class RegisterController extends Controller
         ]);
 
         Auth::login($user);
-        return redirect()->route('home');
+        return redirect($this->redirectTo);
     }
 }
