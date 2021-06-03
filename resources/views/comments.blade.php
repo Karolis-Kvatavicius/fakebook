@@ -64,7 +64,7 @@
                         @isset($comments)
                             <div class="row">
                                 @foreach ($comments as $comment)
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                         <div class="card my-3">
                                             <div class="card-header"><img class="rounded-circle"
                                                     src="{{ asset($comment->user->profile_picture) }}" alt="Profile picture"

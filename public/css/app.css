@@ -10002,3 +10002,70 @@ h3 {
     border-color: #dee2e6;
   }
 }
+body, html {
+  background-color: #dfe3ee;
+  color: #3b5998;
+}
+body .btn-search, html .btn-search {
+  background-color: #3b5998;
+  border: 1px solid #3b5998 !important;
+}
+body .btn-search:hover, html .btn-search:hover {
+  background-color: #8b9dc3;
+  border: 1px solid #8b9dc3 !important;
+}
+body .card, html .card {
+  border: 1px solid #3b5998;
+}
+body .card .card-body, html .card .card-body {
+  background-color: #f7f7f7 !important;
+  color: #3b3b3a;
+}
+body .card .card-body svg, html .card .card-body svg {
+  color: #3b5998;
+}
+body .card .card-body svg:hover, html .card .card-body svg:hover {
+  color: #8b9dc3;
+}
+body .card .card-header, html .card .card-header {
+  background-color: #8b9dc3 !important;
+  color: white !important;
+}
+body .card .card-header .btn-create-post, html .card .card-header .btn-create-post {
+  margin-left: 10px;
+  color: white;
+  border: 1px solid white !important;
+}
+body .card .card-header .btn-create-post:hover, html .card .card-header .btn-create-post:hover {
+  color: #3b5998;
+  border: 1px solid #3b5998 !important;
+}
+body .card .card-header svg, html .card .card-header svg {
+  color: white;
+}
+body .card .card-header svg:hover, html .card .card-header svg:hover {
+  color: #3b5998;
+}
+body .card .btn-primary, html .card .btn-primary {
+  background-color: #3b5998 !important;
+  border: 1px solid #3b5998 !important;
+}
+
+#header {
+  background-color: #3b5998;
+}
+#header #navbar-brand, #header .nav-link, #header #navbar-toggler {
+  color: white !important;
+}
+#header .navbar-toggler {
+  border: none;
+}
+#header .dropdown-menu-right {
+  background-color: #f7f7f7;
+}
+#header #navbarDropdown:hover {
+  color: #f7f7f7 !important;
+}
+#header #navbar-brand:hover {
+  color: #f7f7f7 !important;
+}

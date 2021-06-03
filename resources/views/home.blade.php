@@ -10,7 +10,7 @@
                             name="keyword" value="{{ old('keyword') }}" required autocomplete="keyword"
                             placeholder="Search keyword here...">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
+                            <button class="btn btn-primary btn-search" type="submit">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-search" viewBox="0 0 16 16">
                                     <path
@@ -44,7 +44,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Posts') }}
                         @if (Route::currentRouteName() === 'my-posts')
-                            <a class="btn btn-link" href="{{ route('posts.create') }}">Create Post</a>
+                            <a class="btn btn-create-post" href="{{ route('posts.create') }}">Create Post</a>
                         @endif
                     </div>
                     <div id="posts_list" class="card-body">
@@ -56,7 +56,7 @@
                         @isset($posts)
                             <div class="row">
                                 @foreach ($posts as $post)
-                                    <div class="col-3">
+                                    <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                                         <div class="card my-3">
                                             <div class="card-header"><img class="rounded-circle"
                                                     src="{{ asset($post->user->profile_picture) }}" alt="Profile picture"

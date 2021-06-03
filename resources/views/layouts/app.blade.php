@@ -25,13 +25,17 @@
     <div id="app">
         <nav id="header" class="navbar navbar-expand-md navbar-light shadow-sm sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/posts') }}">
+                <a id="navbar-brand" class="navbar-brand" href="{{ url('/posts') }}">
                     {{ config('app.name', 'Fakebook') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                <button id="navbar-toggler" class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -71,8 +75,9 @@
                                     <a class="dropdown-item" href="{{ route('my-posts') }}">
                                         {{ __('My Posts') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                        document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
                                 </div>
