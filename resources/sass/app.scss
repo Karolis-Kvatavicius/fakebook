@@ -1,0 +1,76 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+body, html {
+    background-color: #dfe3ee;
+    color: #3b5998;
+    .btn-search {
+        background-color: #3b5998;
+        border: 1px solid #3b5998 !important;
+    }
+    .btn-search:hover {
+        background-color: #8b9dc3;
+        border: 1px solid #8b9dc3 !important;
+    }
+    .card {
+        border: 1px solid #3b5998;
+    .card-body {
+        background-color: #f7f7f7 !important;
+        color: rgb(59, 59, 58);
+        svg {
+            color: #3b5998;
+        }
+        svg:hover{
+            color: #8b9dc3;
+        }
+   }
+    .card-header {
+        background-color: #8b9dc3 !important;
+        color: white !important;
+        .btn-create-post{
+            margin-left: 10px;
+            color: white;
+            border: 1px solid white !important;
+        }
+        .btn-create-post:hover {
+            color: #3b5998;
+            border: 1px solid #3b5998 !important;
+        }
+        svg {
+            color: white;
+        }
+        svg:hover {
+            color: #3b5998;
+        }
+   }
+   .btn-primary {
+       background-color: #3b5998 !important;
+       border: 1px solid #3b5998 !important;
+   }
+}
+    }
+
+#header {
+    background-color: #3b5998;
+    #navbar-brand, .nav-link, #navbar-toggler {
+        color: white !important;
+    }
+    .navbar-toggler {
+        border: none;
+    }
+    .dropdown-menu-right {
+        background-color: #f7f7f7;
+    }
+    #navbarDropdown:hover {
+        color: #f7f7f7 !important;
+    }
+    #navbar-brand:hover {
+        color: #f7f7f7 !important;
+    }
+}
