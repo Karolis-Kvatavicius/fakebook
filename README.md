@@ -35,4 +35,4 @@
 
 #### That's it, you are good to go!
 
-<style>span{color:red;}</style>
+<style>p{color:red;}</style>
