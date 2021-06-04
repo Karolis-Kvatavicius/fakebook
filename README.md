@@ -1,6 +1,6 @@
 # Project installation
 
-### This guide is written for fresh installation of Ubuntu 20.04.2 LTS
+## This guide is written for fresh installation of Ubuntu 20.04.2 LTS
 
 ### First install the packages we need
 1. sudo apt install git
@@ -14,7 +14,7 @@
 
 ### Configure mysql
 1. sudo mysql (to connect to mysql)
-2. CREATE USER '[username]'@'localhost' IDENTIFIED BY '[password]';
+2. CREATE USER '<span>[username]</span>'@'localhost' IDENTIFIED BY '<span>[password]</span>';
 3. CREATE DATABASE fakebook;
 4. GRANT ALL PRIVILEGES ON *.* TO '[username]'@'localhost' WITH GRANT OPTION;
 5. quit;
@@ -24,8 +24,8 @@
 2. sudo git clone https://github.com/Karolis-Kvatavicius/fakebook.git
 3. sudo cp .env.example .env
 4. update .env file with credentials of previously created user
-    * DB_USERNAME=[username]
-    * DB_PASSWORD=[password]
+    * DB_USERNAME=<span>[username]</span>
+    * DB_PASSWORD=<span>[password]</span>
 5. sudo composer install
 6. sudo npm install
 7. sudo php artisan migrate --seed
@@ -33,4 +33,6 @@
 9. sudo php artisan serve
 10. Access localhost in your browser, press generate app key and refresh page
 
-That's it, you are good to go!
+#### That's it, you are good to go!
+
+<style>span{color:red;}</style>
