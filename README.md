@@ -1,4 +1,6 @@
-<style>span{color:red;}</style>
+<style>
+span{color:red !important;}
+</style>
 
 # Project installation
 
