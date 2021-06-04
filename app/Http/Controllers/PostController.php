@@ -140,7 +140,9 @@ class PostController extends Controller
                 ->storePubliclyAs('public/posts-images', $fileNameToStore);
 
             $post = Post::find($id);
-            Storage::delete(str_replace('storage/', 'public/', $post->image));
+            if ($post->image !== "storage/posts-images/post.png") {
+                Storage::delete(str_replace('storage/', 'public/', $post->image));
+            }
             $post->update([
                 'content' => $request['content'],
                 'image' => 'storage/posts-images/' . $fileNameToStore,
@@ -164,7 +166,9 @@ class PostController extends Controller
         Like::where('user_id', Auth::id())->where('post_id', $id)->delete();
         Comment::where('post_id', $id)->delete();
         $post = Post::find($id);
-        Storage::delete(str_replace('storage/', 'public/', $post->image));
+        if ($post->image !== "storage/posts-images/post.png") {
+            Storage::delete(str_replace('storage/', 'public/', $post->image));
+        }
         $post->delete();
         return redirect($this->redirectTo);
     }
