@@ -1,3 +1,4 @@
+<style>span{color:red;}</style>
 # Project installation
 
 ## This guide is written for fresh installation of Ubuntu 20.04.2 LTS
@@ -34,5 +35,3 @@
 10. Access localhost in your browser, press generate app key and refresh page
 
 #### That's it, you are good to go!
-
-<style>p{color:red;}</style>
