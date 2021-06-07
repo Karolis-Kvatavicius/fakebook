@@ -1,6 +1,6 @@
 # Project installation
 
-## This guide assumes fresh OS instalation
+## This guide assumes fresh OS installation
 
 ##  Ubuntu 20.04.2 LTS
 
